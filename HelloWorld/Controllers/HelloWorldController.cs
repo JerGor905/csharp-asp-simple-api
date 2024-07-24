@@ -19,28 +19,28 @@ namespace HelloWorld.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return $"Hello {id}";
+            return $"[GET] id: {id}";
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public string Post([FromBody] string value)
         {
-            Console.WriteLine($"POST request body: {value}");
+            return $"[POST] request body: {value}";
         }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public string Put(int id, [FromBody] string value)
         {
-            Console.WriteLine($"Updated object {id} with value: {value}");
+            return $"[PUT] id: {id}\tvalue: {value}";
         }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
-            Console.WriteLine($"DELETE object {id}");
+            return $"[DELETE] id: {id}";
         }
     }
 }
