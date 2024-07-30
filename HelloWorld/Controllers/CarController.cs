@@ -9,9 +9,9 @@ namespace HelloWorld.Controllers
     public class CarController : ControllerBase
     {
         private static readonly List<Car> cars = new List<Car> {
-            new Car { CarId = 1, ChassisCodes = "AE86", price = 100_000 },
-            new Car { CarId = 2, ChassisCodes = "FD3S", price = 200_000 },
-            new Car { CarId = 3, ChassisCodes = "BNR32", price = 300_000 }
+            new() { CarId = 1, ChassisCodes = "AE86", Price = 100_000 },
+            new() { CarId = 2, ChassisCodes = "FD3S", Price = 200_000 },
+            new() { CarId = 3, ChassisCodes = "BNR32", Price = 300_000 }
         };
 
         // GET: api/<ValuesController>
@@ -60,7 +60,7 @@ namespace HelloWorld.Controllers
             if (car != null) {
                 car.CarId = newCar.CarId;
                 car.ChassisCodes = newCar.ChassisCodes;
-                car.price = newCar.price;
+                car.Price = newCar.Price;
             }
 
             return cars;
